@@ -1,11 +1,13 @@
-<?php 
-    class Usuario {
+<?php
+class Usuario
+{
         private $id;
         private $nombre;
         private $email;
         private $password;
+        private $sid;
 
-        
+
 
         /**
          * Get the value of id
@@ -78,6 +80,18 @@
 
                 return $this;
         }
-    }
+        public function getSid()
+        {
+                return $this->sid;
+        }
 
-?>
+        /**
+         * Set the value of password
+         */
+        public function setSid($sid): self
+        {
+                $this->sid = $sid;
+
+                return $this;
+        }
+}
