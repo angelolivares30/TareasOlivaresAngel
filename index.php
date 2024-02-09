@@ -47,6 +47,11 @@ $mapa = array(
         'metodo' => 'login',
         'privada'=> false
     ),
+    'logout'=>array(
+        'controlador'=>'ControladorUsuarios',
+        'metodo' => 'logout',
+        'privada' => false
+    ),
     'registrar' => array(
         'controlador' => 'ControladorUsuarios',
         'metodo' => 'registrar',
