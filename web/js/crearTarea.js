@@ -23,7 +23,7 @@ botonInsertar.addEventListener('click', function () {
             // Crear la imagen de preloader
             var imgElement = document.createElement("img");
             imgElement.src = "web/images/preloader.gif";
-            imgElement.classList.add("preloaderBorrar");
+            imgElement.classList.add("preloaderBorrar", "posicion");
             divTarea.appendChild(imgElement);
 
             // Crear el enlace para editar la tarea
@@ -49,6 +49,8 @@ botonInsertar.addEventListener('click', function () {
             tickOff = document.querySelectorAll('.iconoTickOff');
             console.log(tickOn);
             console.log(tickOff);
+
+            document.getElementById("nuevaTarea").value = "";
 
         })
         .catch(

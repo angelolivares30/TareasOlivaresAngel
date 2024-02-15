@@ -103,11 +103,18 @@
         .color{
             background-color:green;
         }
+        .posicion{
+            position: absolute;
+            left: -70px;
+            bottom: 20px;
+
+        }
     </style>
 </head>
 
 <body>
     <h1>Todas tus tareas</h1>
+    <a href="index.php?accion=logout" style="position: absolute; top: 10px; right:10px; ">CERRAR SESION</a>
 
     <div id="tareas">
         <?php foreach ($tareas as $tarea) : ?>
@@ -122,7 +129,7 @@
             <div class="tarea <?php  echo $existeTick ?'color': ""?>">
                 <div class="texto"><?= $tarea->getTexto() ?></div>
                 <i class="fa-solid fa-trash papelera" data-idTarea="<?= $tarea->getId() ?>" onclick="manejadorBorrar(this)"></i>
-                <img src="web/images/preloader.gif" class="preloaderBorrar">
+                <img src="web/images/preloader.gif" class="preloaderBorrar posicion" >
                 <a href="index.php?accion=editar_tarea&id=<?= $tarea->getId() ?>"><i class="fa-solid fa-pen-to-square color_gris" data-idTarea="<?= $tarea->getId() ?>"></i></a>
                 <?php if($existeTick): ?>
                     <i class="fa-solid fa-square-check iconoTickOn" data-idTarea='<?=$tarea->getId()?>' onclick="quitarTick(this)" ></i>
@@ -134,7 +141,7 @@
     </div>
 
     <input type="text" id="nuevaTarea">
-    <button id="crearTarea">Crear Tarea</button><img src="web/images/preloader.gif" id="preloaderInsertar">
+    <button id="crearTarea">Crear Tarea</button>
     <script src="./web/js/crearTarea.js"></script>
     <script src="web/js/ticks.js"></script>
     <script src="web/js/borrar.js" type="text/javascript"></script>
